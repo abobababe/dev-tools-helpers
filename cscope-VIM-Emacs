@@ -1,0 +1,8 @@
+1st. find src/xc32/xc32-gcc -name '*.c' -o -name '*.h' -o -name '*.def' > cscope.files
+2nd. call cscope and use cscope.files as the input.
+     cscope -b -q cscope.files
+     Congrats! we can now use cscope to quickly traverse our code.
+
+3nd. pass the same list of files to ctags-universal
+     ctags-universal -e -L cscope.files   (mind you the -e flag is for emacs mode)
+     Now, we can traverse our code easily AND jump to definitions, uses, and related files with use via tags
